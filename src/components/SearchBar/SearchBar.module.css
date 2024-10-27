@@ -1,0 +1,32 @@
+.wrapper {
+  background-color: orangered;
+
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input {
+  border: none;
+  padding-left: 10px;
+  height: 50px;
+  width: 00px;
+  background-color: #fafafa;
+
+  & :hover,
+  :focus,
+  :active {
+    border: rgb(255, 0, 0) solid 2px;
+  }
+}
+.btn {
+  border: none;
+  height: 22px;
+  background-color: #fafafa;
+}
