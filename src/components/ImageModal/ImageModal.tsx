@@ -1,13 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import s from "./ImageModal.module.css";
-
-interface Image {
-  user: { name: string };
-  likes: number;
-  urls: { regular: string };
-  alt_description: string;
-}
+import { Image } from "../../types";
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -22,14 +16,14 @@ const ImageModal: React.FC<ImageModalProps> = ({
 }) => {
   if (!image) return null;
 
-  const { user, likes, urls } = image;
+  const { user, likes, urls, alt_description } = image;
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose} className={s.modal}>
       <div className={s.modalContent}>
         <img
           src={urls.regular}
-          alt={image.alt_description}
+          alt={alt_description || "Image"}
           className={s.modalImage}
         />
         <div className={s.info}>
